@@ -1,0 +1,55 @@
+# Pagefind 会自动在当前目录下查找pagefind.yml配置文件，
+# 使用参数或配置文件的效果是等价的
+# 在根目录blog-yoli下新建pagefind.yml配置文件,添加保存以下规则:
+
+# 索引目录
+site: public
+output-path: search
+# glob: "!({tags|categories})/*.html"
+# glob语法见https://juejin.cn/post/6844904077801816077
+# 输出目录
+# 摘要长度,默认30
+excerptLength: 200
+
+exclude_selectors:
+  - "div.tag-cloud-tags" # class为tag-cloud-tags的div标签
+  - "div.categories-table"
+  - "div.page.archive"
+  - "div.single-title.animate__animated.animate__pulse.animate__faster"
+  - "select .color-theme-select"
+
+
+
+
+# 指定要排除索引的文件或目录的 glob 模式
+excludeFiles: ["**/404.html", "*/noindex/*"]
+
+# 指定要包含的字段，这些字段将被索引用于搜索
+fields: ["h1","title", "description", "content"]
+
+# 指定用于生成摘要的字段
+excerptField: "excerpt"
+
+# 指定用于搜索结果标题的字段
+titleField: "title"
+
+# 指定用于搜索结果 URL 的字段
+#urlField: "link"
+
+# 指定用于搜索结果内容的字段
+#contentField: "content"
+
+# 指定是否将 HTML 内容转换为纯文本
+#htmlAsText: true
+
+# 指定是否启用对中文语言的支持
+chinese: true
+
+# 指定是否在控制台中显示详细的日志信息
+verbose: false
+
+# 指定是否跟踪堆内存使用情况
+traceHeap: false
+
+# 指定是否启用调试模式
+debug: false

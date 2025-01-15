@@ -2,16 +2,26 @@ baseURL = "/"
 title = "中国法律快查手册"
 languageCode = 'zh-cn'
 defaultContentLanguage = 'zh'
-
+# ignoreLogs = ['warning-goldmark-raw-html']
 theme = ["hugo-book"]
+# ignoreFiles = ['\.foo$', '\.boo$']
 # enableGitInfo = true
-
+[menu]
+[[menu.before]]
+  name = "全文检索"
+  url = "/search.html"
+  weight = 10
 [params]
   BookTheme = 'auto'
 
   BookToC = true
   BookSection = 'docs'
 
-  BookSearch = true
+  BookSearch = false
   BookComments = false
   BookFlatSection = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
